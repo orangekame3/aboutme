@@ -114,9 +114,6 @@ export function FooterSocial() {
           <ActionIcon size="lg" href ="https://github.com/orangekame3" color="gray" variant="subtle">
             <IconBrandGithub style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
           </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandInstagram style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
-          </ActionIcon>
         </Group>
       </Container>
     </div>
