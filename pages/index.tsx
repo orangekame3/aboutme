@@ -2,14 +2,29 @@ import { Paper,Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar
 import classes from './UserCardImage.module.css';
 import { useState } from 'react';
 import { useDisclosure } from '@mantine/hooks';
-import { useRouter } from 'next/router';
 import { IconBrandTwitter, IconBrandGithub, IconBrandInstagram } from '@tabler/icons-react';
 
-export default function UserCardImage() {
+export default function Index() {
+	const [showPersonalInfo, setShowPersonalInfo] = useState(true);
   return (
     <>
-    <HeaderSimple/>
-    <Center>
+    <HeaderSimple setShowPersonalInfo={setShowPersonalInfo} /> {/* ここでsetShowPersonalInfoをpropsとして渡す */}
+		{showPersonalInfo ? <PersonalInfo/> : <Blogs/>}
+    <FooterSocial/>
+    </>
+  );
+}
+
+function Blogs(){
+	return (
+		<>
+		</>
+	)
+}
+
+function PersonalInfo(){
+	return (
+	<Center>
     <Box ta="center" w={{ base: 400, sm: 800, lg: 1200 }}>
     <Card withBorder shadow="sm" padding="sm" radius="md">
       <Card.Section>
@@ -41,10 +56,8 @@ export default function UserCardImage() {
       <Career/>
     </Card>
     </Box>
-    </Center>
-    <FooterSocial/>
-    </>
-  );
+  </Center>
+		)
 }
 
 function Sentence(){
@@ -100,24 +113,30 @@ const links = [
   { link: '/', label: 'About' },
   { link: '/blogs', label: 'Blogs' },
 ];
-export function HeaderSimple() {
-  const router = useRouter();
-  const [opened, { toggle }] = useDisclosure(false);
-  const [active, setActive] = useState(router.pathname);
+export function HeaderSimple({setShowPersonalInfo}) {
+	const [opened, { toggle }] = useDisclosure(false);
+  const [active, setActive] = useState('/');
 
   const items = links.map((link) => (
-    <a
+    <Button
       key={link.label}
-      href={link.link}
       className={classes.link}
-      data-active={active === link.link || undefined}
-      onClick={(event) => {
-        //event.preventDefault();
-        setActive(link.link);
+			style={{
+				backgroundColor: active === link.link ? "blue" : "white",
+				color: active === link.link ? "white" : "blue"
+			}}
+      onClick={() => {
+        if (link.label === "About") {
+          setShowPersonalInfo(true);  // ここで状態を変更
+					setActive(link.link);
+				} else if (link.label === "Blogs") {
+          setShowPersonalInfo(false);  // ここで状態を変更
+					setActive(link.link);
+        }
       }}
     >
       {link.label}
-    </a>
+    </Button>
   ));
 
   return (

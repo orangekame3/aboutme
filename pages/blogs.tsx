@@ -5,15 +5,10 @@ import { useDisclosure } from '@mantine/hooks';
 import { useRouter } from 'next/router';
 import { IconBrandTwitter, IconBrandGithub, IconBrandInstagram } from '@tabler/icons-react';
 
-export default function UserCardImage() {
+export default function Index() {
   return (
     <>
     <HeaderSimple/>
-    <Center>
-    <Box ta="center" w={{ base: 700, sm: 1000, lg: 1200 }}>
-			This page is underconstruction
-    </Box>
-    </Center>
     <FooterSocial/>
     </>
   );
@@ -35,7 +30,6 @@ export function HeaderSimple() {
       className={classes.link}
       data-active={active === link.link || undefined}
       onClick={(event) => {
-        //event.preventDefault();
         setActive(link.link);
       }}
     >
