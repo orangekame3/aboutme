@@ -2,7 +2,7 @@ import { Highlight, Table, Paper,Container, Burger,Box,Title, Center,Timeline ,I
 import classes from './UserCardImage.module.css';
 import { useState } from 'react';
 import { useDisclosure } from '@mantine/hooks';
-import { IconBrandTwitter, IconBrandGithub, IconBrandInstagram } from '@tabler/icons-react';
+import { IconBrandTwitter, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 
 export default function Index() {
 	const [showPersonalInfo, setShowPersonalInfo] = useState(true);
@@ -50,6 +50,9 @@ function PersonalInfo(){
           </ActionIcon>
           <ActionIcon size="lg" component="a" href ="https://github.com/orangekame3" color="gray" variant="subtle">
             <IconBrandGithub style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+          </ActionIcon>
+					<ActionIcon size="lg" component="a" href ="https://www.linkedin.com/in/takafumi-miyanaga-4476131a6/" color="gray" variant="subtle">
+            <IconBrandLinkedin style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
           </ActionIcon>
       </Group>
 			<Sentence/>
@@ -233,6 +236,9 @@ export function FooterSocial() {
           </ActionIcon>
           <ActionIcon size="lg" component="a" href ="https://github.com/orangekame3" color="gray" variant="subtle">
             <IconBrandGithub style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+          </ActionIcon>
+					<ActionIcon size="lg" component="a" href ="https://www.linkedin.com/in/takafumi-miyanaga-4476131a6/" color="gray" variant="subtle">
+            <IconBrandLinkedin style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
           </ActionIcon>
         </Group>
       </Container>
