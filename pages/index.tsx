@@ -145,9 +145,6 @@ export function HeaderSimple({ setShowPersonalInfo }: HeaderSimpleProps) {
   return (
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
-        <Text c="dimmed" size="sm">
-          Takafumi Miyanaga(@orangekame3)
-        </Text>
         <Group gap={5} visibleFrom="xs">
           {items}
         </Group>
