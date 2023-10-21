@@ -1,4 +1,4 @@
-import { Paper,Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem  } from '@mantine/core';
+import { Highlight, Table, Paper,Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem  } from '@mantine/core';
 import classes from './UserCardImage.module.css';
 import { useState } from 'react';
 import { useDisclosure } from '@mantine/hooks';
@@ -54,6 +54,8 @@ function PersonalInfo(){
       </Group>
 			<Sentence/>
       <Career/>
+			<Publication/>
+			<OSS/>
     </Card>
     </Box>
   </Center>
@@ -72,10 +74,69 @@ function Sentence(){
 	)
 }
 
+const elements = [
+	{ title: "【Translate】Software Mistakes and Tradeoffs: How to make good programming decisions", year: 2023,link:"https://www.oreilly.co.jp/books/9784814400317/"},
+	{ title: "Ultrastrong Tunable Coupler Between Superconducting LC Resonators", year: 2021, link: "https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.16.064041"},
+];
+
+function Publication(){
+	const rows = elements.map((element) => (
+    <Table.Tr key={element.title}>
+			<Table.Td><a href={element.link}>{element.title}</a></Table.Td>
+      <Table.Td>{element.year}</Table.Td>
+    </Table.Tr>
+  ));
+	return (
+		<Box mx="auto">
+		<Title td="underline" my="xl" order={2}>Publication</Title>
+		<Table ta="left" striped highlightOnHover withTableBorder withColumnBorders>
+      <Table.Thead>
+        <Table.Tr>
+          <Table.Th>Title</Table.Th>
+          <Table.Th>Year</Table.Th>
+        </Table.Tr>
+      </Table.Thead>
+      <Table.Tbody>{rows}</Table.Tbody>
+    </Table>
+		</Box>
+	)
+	}
+	const osslist = [
+		{ title: "tftarget", description: "🎯tftarget is a CLI tool for Terraform ( plan | apply | destroy ) with target option. You can interactivity select resource to ( plan | apply | destroy ) with target option.",link:"https://github.com/future-architect/tftarget",star:174},
+		{ title: "stree", description: "📁Directory trees of AWS S3 Bucket",link:"https://github.com/orangekame3/stree",star:43},
+		{ title: "paclear", description: "👾paclear is a clear command with PAC-MAN animation👾",link:"https://github.com/orangekame3/paclear",star:30},
+		{ title: "ghfetch", description: "ghfetch is a CLI tool to fetch GitHub user information and show like neofetch.",link:"https://github.com/orangekame3/ghfetch",star:14},
+	];
+
+	function OSS(){
+		const rows = osslist.map((oss) => (
+			<Table.Tr key={oss.title}>
+				<Table.Td><a href={oss.link}>{oss.title}</a></Table.Td>
+				<Table.Td>{oss.description}</Table.Td>
+				<Table.Td>{oss.star}</Table.Td>
+			</Table.Tr>
+		));
+		return (
+			<Box mx="auto">
+			<Title td="underline" my="xl" order={2}>OSS</Title>
+			<Table ta="left" striped highlightOnHover withTableBorder withColumnBorders>
+				<Table.Thead>
+					<Table.Tr>
+						<Table.Th>Title</Table.Th>
+						<Table.Th>Description</Table.Th>
+						<Table.Th>Star</Table.Th>
+					</Table.Tr>
+				</Table.Thead>
+				<Table.Tbody>{rows}</Table.Tbody>
+			</Table>
+			</Box>
+		)
+		}
+
 function Career() {
   return (
     <>
-    <Title my="xl" order={2}>Career</Title>
+    <Title td="underline" my="xl" order={2}>Career</Title>
     <Center my="sm">
     <Timeline active={0}>
         <Timeline.Item title="Future Corp.">
