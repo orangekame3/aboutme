@@ -7,12 +7,12 @@ export default function App({ Component, pageProps }: any) {
   return (
     <MantineProvider theme={theme}>
       <Head>
-        <title>Mantine Template</title>
+        <title>Takafumi Miyanaga</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
-        <link rel="shortcut icon" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/orangekame3.jpg" />
       </Head>
       <Component {...pageProps} />
     </MantineProvider>
