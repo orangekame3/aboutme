@@ -108,12 +108,15 @@ function Career() {
   );
 }
 
+type HeaderSimpleProps = {
+  setShowPersonalInfo: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 const links = [
   { link: '/', label: 'About' },
   { link: '/blogs', label: 'Blogs' },
 ];
-export function HeaderSimple({setShowPersonalInfo}) {
+export function HeaderSimple({ setShowPersonalInfo }: HeaderSimpleProps) {
 	const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState('/');
 
