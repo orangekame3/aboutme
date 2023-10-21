@@ -108,10 +108,10 @@ export function FooterSocial() {
           Takafumi Miyanaga(@orangekame3)
         </Text>
         <Group gap={0} className={classes.links} justify="flex-end" wrap="nowrap">
-          <ActionIcon  href="https://twitter.com/orangekame3" size="lg" color="gray" variant="subtle">
+          <ActionIcon component="a" href="https://twitter.com/orangekame3" size="lg" color="gray" variant="subtle">
             <IconBrandTwitter style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
           </ActionIcon>
-          <ActionIcon size="lg" href ="https://github.com/orangekame3" color="gray" variant="subtle">
+          <ActionIcon size="lg" component="a" href ="https://github.com/orangekame3" color="gray" variant="subtle">
             <IconBrandGithub style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
           </ActionIcon>
         </Group>
