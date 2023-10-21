@@ -1,0 +1,55 @@
+.avatar {
+    border: rem(2px) solid var(--mantine-color-body);
+  }
+/* Base styles added to element and then get overwritten with responsive values */
+.element {
+  width: 20rem;
+}
+
+/* 48em is theme.breakpoints.sm by default */
+@media (min-width: 48em) {
+  .element {
+    width: 30rem;
+  }
+}
+
+/* 75em is theme.breakpoints.lg by default */
+@media (min-width: 75em) {
+  .element {
+    width: 40rem;
+  }
+}
+
+.header {
+  height: rem(56px);
+  margin-bottom: rem(120px);
+  background-color: var(--mantine-color-body);
+  border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+}
+
+.inner {
+  height: rem(56px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  display: block;
+  line-height: 1;
+  padding: rem(8px) rem(12px);
+  border-radius: var(--mantine-radius-sm);
+  text-decoration: none;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+
+  @mixin hover {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  }
+
+  [data-mantine-color-scheme] &[data-active] {
+    background-color: var(--mantine-color-blue-filled);
+    color: var(--mantine-color-white);
+  }
+}
