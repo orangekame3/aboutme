@@ -122,8 +122,8 @@ export function HeaderSimple({setShowPersonalInfo}) {
       key={link.label}
       className={classes.link}
 			style={{
-				backgroundColor: active === link.link ? "blue" : "white",
-				color: active === link.link ? "white" : "blue"
+				backgroundColor: active === link.link ? "#1D72FE" : "white",
+				color: active === link.link ? "white" : "#1D72FE"
 			}}
       onClick={() => {
         if (link.label === "About") {
