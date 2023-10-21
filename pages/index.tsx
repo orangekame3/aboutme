@@ -215,6 +215,7 @@ export function HeaderSimple({ setShowPersonalInfo }: HeaderSimpleProps) {
         <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
 				{opened && (
         <div className={classes.menu}>
+					<Box my="15"></Box>
           {items}
         </div>
       )}

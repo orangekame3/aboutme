@@ -60,4 +60,9 @@
   align-items: center;
   padding-top: var(--mantine-spacing-xl);
   padding-bottom: var(--mantine-spacing-xl);
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    flex-direction: column;
+		position: absolute;
+  }
 }
