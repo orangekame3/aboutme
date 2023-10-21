@@ -1,7 +1,8 @@
-import { Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button } from '@mantine/core';
+import { Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem  } from '@mantine/core';
 import classes from './UserCardImage.module.css';
 import { useState } from 'react';
 import { useDisclosure } from '@mantine/hooks';
+import { IconBrandTwitter, IconBrandGithub, IconBrandInstagram } from '@tabler/icons-react';
 
 export default function UserCardImage() {
   return (
@@ -32,7 +33,7 @@ export default function UserCardImage() {
     
     </Box>
     </Center>
-    
+    <FooterSocial/>
     </>
   );
 }
@@ -61,10 +62,8 @@ function Demo() {
 
 
 const links = [
-  { link: '/about', label: 'Features' },
-  { link: '/pricing', label: 'Pricing' },
-  { link: '/learn', label: 'Learn' },
-  { link: '/community', label: 'Community' },
+  { link: '/index', label: 'About' },
+  { link: '/blogs', label: 'Blogs' },
 ];
 export function HeaderSimple() {
   const [opened, { toggle }] = useDisclosure(false);
@@ -98,5 +97,28 @@ export function HeaderSimple() {
         <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
       </Container>
     </header>
+  );
+}
+
+export function FooterSocial() {
+  return (
+    <div className={classes.footer}>
+      <Container className={classes.inner}>
+        <Text c="dimmed" size="sm">
+          Takafumi Miyanaga(@orangekame3)
+        </Text>
+        <Group gap={0} className={classes.links} justify="flex-end" wrap="nowrap">
+          <ActionIcon  href="https://twitter.com/orangekame3" size="lg" color="gray" variant="subtle">
+            <IconBrandTwitter style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+          </ActionIcon>
+          <ActionIcon size="lg" href ="https://github.com/orangekame3" color="gray" variant="subtle">
+            <IconBrandGithub style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+          </ActionIcon>
+          <ActionIcon size="lg" color="gray" variant="subtle">
+            <IconBrandInstagram style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+          </ActionIcon>
+        </Group>
+      </Container>
+    </div>
   );
 }
