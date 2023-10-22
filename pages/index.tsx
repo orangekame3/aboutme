@@ -1,15 +1,14 @@
-import {  Col, useMantineTheme,Badge,Highlight, Table, Paper,Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem  } from '@mantine/core';
+import {  Table, Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem  } from '@mantine/core';
 import classes from './UserCardImage.module.css';
 import { useState,useEffect } from 'react';
 import { useDisclosure } from '@mantine/hooks';
-import Parser from 'rss-parser';
-import { IconBookmark, IconHeart, IconShare, IconBrandTwitter, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
+import {  IconBrandTwitter, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 
 export default function Index() {
 	const [showPersonalInfo, setShowPersonalInfo] = useState(true);
   return (
     <>
-    <HeaderSimple setShowPersonalInfo={setShowPersonalInfo} /> {/* ここでsetShowPersonalInfoをpropsとして渡す */}
+    <HeaderSimple setShowPersonalInfo={setShowPersonalInfo} /> 
 		{showPersonalInfo ? <PersonalInfo/> : <Blogs/>}
     <FooterSocial/>
     </>
@@ -17,7 +16,6 @@ export default function Index() {
 }
 interface OgpCardProps {
   title: string;
-  description: string;
   image?: string;
   url: string;
 }
@@ -25,14 +23,13 @@ interface OgpCardProps {
 // RSSフィードアイテムの型定義
 interface FeedItem {
   title: string;
-  description: string;
   link: string;  // 追加: リンク先URL
   enclosure?: {
-    url: string;
+    link: string;
   };
 }
 
-const OgpCard: React.FC<OgpCardProps> = ({ title, description, image, url }) => {
+const OgpCard: React.FC<OgpCardProps> = ({ title,  image, url }) => {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer">
       <Card style={{ cursor: 'pointer' }}>
