@@ -1,8 +1,9 @@
-import { Highlight, Table, Paper,Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem  } from '@mantine/core';
+import {  Col, useMantineTheme,Badge,Highlight, Table, Paper,Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem  } from '@mantine/core';
 import classes from './UserCardImage.module.css';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useDisclosure } from '@mantine/hooks';
-import { IconBrandTwitter, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
+import Parser from 'rss-parser';
+import { IconBookmark, IconHeart, IconShare, IconBrandTwitter, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 
 export default function Index() {
 	const [showPersonalInfo, setShowPersonalInfo] = useState(true);
@@ -14,13 +15,66 @@ export default function Index() {
     </>
   );
 }
-
-function Blogs(){
-	return (
-		<>
-		</>
-	)
+interface OgpCardProps {
+  title: string;
+  description: string;
+  image?: string;
+  url: string;
 }
+
+// RSSフィードアイテムの型定義
+interface FeedItem {
+  title: string;
+  description: string;
+  link: string;  // 追加: リンク先URL
+  enclosure?: {
+    url: string;
+  };
+}
+
+const OgpCard: React.FC<OgpCardProps> = ({ title, description, image, url }) => {
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      <Card style={{ cursor: 'pointer' }}>
+        <img src={image} alt={title} />
+      </Card>
+    </a>
+  );
+};
+
+const RSS_TO_JSON_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://zenn.dev/orangekame/feed";
+
+export const Blogs = () => {
+  const [articles, setArticles] = useState<FeedItem[]>([]);
+
+  useEffect(() => {
+    const fetchRSS = async () => {
+      try {
+        const res = await fetch(RSS_TO_JSON_URL);
+        const data = await res.json();
+        setArticles(data.items);
+        console.log('Fetched articles:', data.items);
+      } catch (error) {
+        console.error('Failed to fetch RSS:', error);
+      }
+    };
+
+    fetchRSS();
+  }, []);
+
+  return (
+    <div>
+      {articles.map((article, index) => (
+        <OgpCard
+          key={index}
+          title={article.title}
+          image={article.enclosure?.link}
+          url={article.link} // 追加: リンク先URL
+        />
+      ))}
+    </div>
+  );
+};
 
 function PersonalInfo(){
 	return (
