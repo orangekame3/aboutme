@@ -59,6 +59,8 @@ export const Blogs = () => {
   }, []);
 
   return (
+    <Center>
+     <Box ta="center" w={{ base: 400, sm: 800, lg: 1200 }}>
     <SimpleGrid cols={2}>
       {articles.map((article, index) => (
         <OgpCard
@@ -69,6 +71,8 @@ export const Blogs = () => {
         />
       ))}
     </SimpleGrid>
+    </Box>
+    </Center>
   );
 };
 
