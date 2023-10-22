@@ -1,4 +1,4 @@
-import {  Table, Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem  } from '@mantine/core';
+import {SimpleGrid,  Table, Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem  } from '@mantine/core';
 import classes from './UserCardImage.module.css';
 import { useState,useEffect } from 'react';
 import { useDisclosure } from '@mantine/hooks';
@@ -20,10 +20,10 @@ interface OgpCardProps {
   url: string;
 }
 
-// RSSフィードアイテムの型定義
+
 interface FeedItem {
   title: string;
-  link: string;  // 追加: リンク先URL
+  link: string;
   enclosure?: {
     link: string;
   };
@@ -50,7 +50,6 @@ export const Blogs = () => {
         const res = await fetch(RSS_TO_JSON_URL);
         const data = await res.json();
         setArticles(data.items);
-        console.log('Fetched articles:', data.items);
       } catch (error) {
         console.error('Failed to fetch RSS:', error);
       }
@@ -60,16 +59,16 @@ export const Blogs = () => {
   }, []);
 
   return (
-    <div>
+    <SimpleGrid cols={2}>
       {articles.map((article, index) => (
         <OgpCard
           key={index}
           title={article.title}
           image={article.enclosure?.link}
-          url={article.link} // 追加: リンク先URL
+          url={article.link}
         />
       ))}
-    </div>
+    </SimpleGrid>
   );
 };
 
@@ -245,10 +244,10 @@ export function HeaderSimple({ setShowPersonalInfo }: HeaderSimpleProps) {
 			}}
       onClick={() => {
         if (link.label === "About") {
-          setShowPersonalInfo(true);  // ここで状態を変更
+          setShowPersonalInfo(true);  
 					setActive(link.link);
 				} else if (link.label === "Blogs") {
-          setShowPersonalInfo(false);  // ここで状態を変更
+          setShowPersonalInfo(false);  
 					setActive(link.link);
         }
       }}
