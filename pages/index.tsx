@@ -2,7 +2,7 @@ import {SimpleGrid,  Table, Container, Burger,Box,Title, Center,Timeline ,Image,
 import classes from './UserCardImage.module.css';
 import { useState,useEffect } from 'react';
 import { useDisclosure } from '@mantine/hooks';
-import {  IconBrandTwitter, IconBrandGithub, IconBrandLinkedin, IconBrandMastodon } from '@tabler/icons-react';
+import {  IconBrandTwitter, IconBrandGithub, IconBrandLinkedin, IconBrandMastodon, IconBrandGmail } from '@tabler/icons-react';
 
 export default function Index() {
 	const [showPersonalInfo, setShowPersonalInfo] = useState(true);
@@ -162,18 +162,7 @@ function PersonalInfo(){
         Backend engineer
       </Text>
 			<Group gap={0} className={classes.links} justify="center" wrap="nowrap">
-          <ActionIcon component="a" href="https://twitter.com/orangekame3" size="lg" color="gray" variant="subtle">
-            <IconBrandTwitter style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="xl" component="a" href ="https://github.com/orangekame3" color="gray" variant="subtle">
-            <IconBrandGithub style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
-          </ActionIcon>
-					<ActionIcon size="xl" component="a" href ="https://www.linkedin.com/in/takafumi-miyanaga-4476131a6/" color="gray" variant="subtle">
-            <IconBrandLinkedin style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="xl" component="a" href ="https://elk.zone/mstdn.jp/@orangekame3" color="gray" variant="subtle">
-            <IconBrandMastodon style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
-          </ActionIcon>
+      <IconSet/>
       </Group>
 			<Sentence/>
       <Career/>
@@ -183,6 +172,29 @@ function PersonalInfo(){
     </Box>
   </Center>
 		)
+}
+
+function IconSet(){
+  return(
+    <>
+    <ActionIcon component="a" href="https://twitter.com/orangekame3" size="lg" color="gray" variant="subtle">
+      <IconBrandTwitter style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
+    </ActionIcon>
+    <ActionIcon size="xl" component="a" href ="https://github.com/orangekame3" color="gray" variant="subtle">
+      <IconBrandGithub style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
+    </ActionIcon>
+		<ActionIcon size="xl" component="a" href ="https://www.linkedin.com/in/takafumi-miyanaga-4476131a6/" color="gray" variant="subtle">
+      <IconBrandLinkedin style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
+    </ActionIcon>
+    <ActionIcon size="xl" component="a" href ="https://elk.zone/mstdn.jp/@orangekame3" color="gray" variant="subtle">
+      <IconBrandMastodon style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
+    </ActionIcon>
+    <ActionIcon size="xl" component="a" href ="mailto:miya.org.0309@gmail.com" color="gray" variant="subtle">
+      <IconBrandGmail style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
+    </ActionIcon>
+
+</>
+  )
 }
 
 function Sentence(){
@@ -352,19 +364,8 @@ export function FooterSocial() {
           Takafumi Miyanaga(@orangekame3)
         </Text>
         <Group gap={0} className={classes.links} justify="flex-end" wrap="nowrap">
-        <ActionIcon component="a" href="https://twitter.com/orangekame3" size="lg" color="gray" variant="subtle">
-            <IconBrandTwitter style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="xl" component="a" href ="https://github.com/orangekame3" color="gray" variant="subtle">
-            <IconBrandGithub style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
-          </ActionIcon>
-					<ActionIcon size="xl" component="a" href ="https://www.linkedin.com/in/takafumi-miyanaga-4476131a6/" color="gray" variant="subtle">
-            <IconBrandLinkedin style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="xl" component="a" href ="https://elk.zone/mstdn.jp/@orangekame3" color="gray" variant="subtle">
-            <IconBrandMastodon style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
-          </ActionIcon>
-        </Group>
+        <IconSet/>
+       </Group>
       </Container>
     </div>
   );
