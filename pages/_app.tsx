@@ -14,6 +14,7 @@ export default function App({ Component, pageProps }: any) {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:title" content="Takafumi Miyanaga" />
+        <meta property="og:description" content="Takafumi Miyanaga's portfolio site" />
         <meta property="og:url" content="https://orangekame3.github.io/" />
         <meta property="og:site_name" content="Takafumi Miyanaga" />
         <meta property="og:type" content="type" />
