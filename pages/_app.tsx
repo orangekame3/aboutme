@@ -12,7 +12,13 @@ export default function App({ Component, pageProps }: any) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
-        <link rel="shortcut icon" href="/orangekame3.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:title" content="Takafumi Miyanaga" />
+        <meta property="og:url" content="https://orangekame3.github.io/" />
+        <meta property="og:site_name" content="Takafumi Miyanaga" />
+        <meta property="og:type" content="type" />
+        <meta property="og:image" content="https://github.com/orangekame3/orangekame3.github.io/blob/master/public/orangekame3.jpg?raw=true" />
+        <link rel="shortcut icon" href="https://github.com/orangekame3/orangekame3.github.io/blob/master/public/orangekame3.jpg?raw=true" />
       </Head>
       <Component {...pageProps} />
     </MantineProvider>
