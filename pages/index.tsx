@@ -1,18 +1,32 @@
-import {SimpleGrid,  Table, Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem  } from '@mantine/core';
+import {SimpleGrid,  Table, Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem, CardSection  } from '@mantine/core';
 import classes from './UserCardImage.module.css';
 import { useState,useEffect } from 'react';
 import { useDisclosure } from '@mantine/hooks';
 import {  IconBrandTwitter, IconBrandGithub, IconBrandLinkedin, IconBrandMastodon, IconBrandGmail } from '@tabler/icons-react';
 
 export default function Index() {
-	const [showPersonalInfo, setShowPersonalInfo] = useState(true);
+	const [showPersonalInfo, setShowPersonalInfo] = useState(1);
   return (
     <>
-    <HeaderSimple setShowPersonalInfo={setShowPersonalInfo} /> 
-		{showPersonalInfo ? <PersonalInfo/> : <Blogs/>}
+    <HeaderSimple setShowPersonalInfo={setShowPersonalInfo} />
+    {showPersonalInfo==1 && <PersonalInfo/>}
+    {showPersonalInfo==2 && <Blogs/>}
+    {showPersonalInfo==3 && <QR/>}
     <FooterSocial/>
     </>
   );
+}
+
+function QR(){
+  return (
+    <Center>
+    <Box ta="center" w={{ base: 400, sm: 800, lg: 1200 }}>
+    <Title td="underline" order={1} my="xl">QR code for this site</Title>
+    <Title order={2} my="xl">📷Scan to visit my portfolio</Title>
+      <Image src="qr.png" fit="contain" height={250} width={250} alt="qr code"/>
+    </Box>
+    </Center>
+  )
 }
 
 function Blogs(){
@@ -305,12 +319,13 @@ function Career() {
 }
 
 type HeaderSimpleProps = {
-  setShowPersonalInfo: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowPersonalInfo: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const links = [
   { link: '/', label: 'About' },
   { link: '/blogs', label: 'Blogs' },
+  {link:'/qr', label:'QR'},
 ];
 export function HeaderSimple({ setShowPersonalInfo }: HeaderSimpleProps) {
 	const [opened, { toggle }] = useDisclosure(false);
@@ -326,11 +341,14 @@ export function HeaderSimple({ setShowPersonalInfo }: HeaderSimpleProps) {
 			}}
       onClick={() => {
         if (link.label === "About") {
-          setShowPersonalInfo(true);  
+          setShowPersonalInfo(1);  
 					setActive(link.link);
 				} else if (link.label === "Blogs") {
-          setShowPersonalInfo(false);  
+          setShowPersonalInfo(2);  
 					setActive(link.link);
+        }else{
+          setShowPersonalInfo(3);
+          setActive(link.link)
         }
       }}
     >
