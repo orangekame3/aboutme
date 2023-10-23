@@ -2,7 +2,7 @@ import {SimpleGrid,  Table, Container, Burger,Box,Title, Center,Timeline ,Image,
 import classes from './UserCardImage.module.css';
 import { useState,useEffect } from 'react';
 import { useDisclosure } from '@mantine/hooks';
-import {  IconBrandTwitter, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
+import {  IconBrandTwitter, IconBrandGithub, IconBrandLinkedin, IconBrandMastodon } from '@tabler/icons-react';
 
 export default function Index() {
 	const [showPersonalInfo, setShowPersonalInfo] = useState(true);
@@ -163,13 +163,16 @@ function PersonalInfo(){
       </Text>
 			<Group gap={0} className={classes.links} justify="center" wrap="nowrap">
           <ActionIcon component="a" href="https://twitter.com/orangekame3" size="lg" color="gray" variant="subtle">
-            <IconBrandTwitter style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+            <IconBrandTwitter style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
           </ActionIcon>
-          <ActionIcon size="lg" component="a" href ="https://github.com/orangekame3" color="gray" variant="subtle">
-            <IconBrandGithub style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+          <ActionIcon size="xl" component="a" href ="https://github.com/orangekame3" color="gray" variant="subtle">
+            <IconBrandGithub style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
           </ActionIcon>
-					<ActionIcon size="lg" component="a" href ="https://www.linkedin.com/in/takafumi-miyanaga-4476131a6/" color="gray" variant="subtle">
-            <IconBrandLinkedin style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+					<ActionIcon size="xl" component="a" href ="https://www.linkedin.com/in/takafumi-miyanaga-4476131a6/" color="gray" variant="subtle">
+            <IconBrandLinkedin style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
+          </ActionIcon>
+          <ActionIcon size="xl" component="a" href ="https://elk.zone/mstdn.jp/@orangekame3" color="gray" variant="subtle">
+            <IconBrandMastodon style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
           </ActionIcon>
       </Group>
 			<Sentence/>
@@ -349,14 +352,17 @@ export function FooterSocial() {
           Takafumi Miyanaga(@orangekame3)
         </Text>
         <Group gap={0} className={classes.links} justify="flex-end" wrap="nowrap">
-          <ActionIcon component="a" href="https://twitter.com/orangekame3" size="lg" color="gray" variant="subtle">
-            <IconBrandTwitter style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+        <ActionIcon component="a" href="https://twitter.com/orangekame3" size="lg" color="gray" variant="subtle">
+            <IconBrandTwitter style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
           </ActionIcon>
-          <ActionIcon size="lg" component="a" href ="https://github.com/orangekame3" color="gray" variant="subtle">
-            <IconBrandGithub style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+          <ActionIcon size="xl" component="a" href ="https://github.com/orangekame3" color="gray" variant="subtle">
+            <IconBrandGithub style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
           </ActionIcon>
-					<ActionIcon size="lg" component="a" href ="https://www.linkedin.com/in/takafumi-miyanaga-4476131a6/" color="gray" variant="subtle">
-            <IconBrandLinkedin style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+					<ActionIcon size="xl" component="a" href ="https://www.linkedin.com/in/takafumi-miyanaga-4476131a6/" color="gray" variant="subtle">
+            <IconBrandLinkedin style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
+          </ActionIcon>
+          <ActionIcon size="xl" component="a" href ="https://elk.zone/mstdn.jp/@orangekame3" color="gray" variant="subtle">
+            <IconBrandMastodon style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
           </ActionIcon>
         </Group>
       </Container>
