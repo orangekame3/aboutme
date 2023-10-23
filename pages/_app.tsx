@@ -18,8 +18,8 @@ export default function App({ Component, pageProps }: any) {
         <meta property="og:url" content="https://orangekame3.github.io/" />
         <meta property="og:site_name" content="Takafumi Miyanaga" />
         <meta property="og:type" content="type" />
-        <meta property="og:image" content="https://github.com/orangekame3/orangekame3.github.io/blob/master/public/orangekame3.jpg?raw=true" />
-        <link rel="shortcut icon" href="https://github.com/orangekame3/orangekame3.github.io/blob/master/public/orangekame3.jpg?raw=true" />
+        <meta property="og:image" content="https://github.com/orangekame3/orangekame3.github.io/blob/master/public/profile.jpg?raw=true" />
+        <link rel="shortcut icon" href="https://github.com/orangekame3/orangekame3.github.io/blob/master/public/profile.jpg?raw=true" />
       </Head>
       <Component {...pageProps} />
     </MantineProvider>
