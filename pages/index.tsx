@@ -1,4 +1,4 @@
-import {SimpleGrid,  Table, Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem  } from '@mantine/core';
+import {Paper, SimpleGrid,  Table, Container, Burger,Box,Title, Center,Timeline ,Image, Card, Avatar, Text, Group, Button,ActionIcon, rem  } from '@mantine/core';
 import classes from './UserCardImage.module.css';
 import { useState,useEffect } from 'react';
 import { useDisclosure } from '@mantine/hooks';
@@ -29,13 +29,16 @@ interface FeedItem {
   };
 }
 
-const OgpCard: React.FC<OgpCardProps> = ({ title,  image, url }) => {
+const OgpCard: React.FC<OgpCardProps> = ({ title, image, url }) => {
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer">
-      <Card style={{ cursor: 'pointer' }}>
-        <img src={image} alt={title} />
+      <>
+      <Card shadow="lg" padding="lg" radius="md" style={{ cursor: 'pointer'}} component='a' href={url} target="_blank">
+        <Card.Section inheritPadding>
+          <Image fit="contain" radius="md" src={image} alt={title} h={160}/>
+        </Card.Section>
+        <Text>{title}</Text>
       </Card>
-    </a>
+    </>
   );
 };
 
@@ -62,6 +65,116 @@ export const Blogs = () => {
     <Center>
      <Box ta="center" w={{ base: 400, sm: 800, lg: 1200 }}>
     <SimpleGrid cols={2}>
+      <OgpCard
+      key="hoge"
+      title="stree:S3バケットをtreeするCLIコマンド | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20230926a/stree-display.png"
+      url="https://future-architect.github.io/articles/20230926a/"
+      />
+      <OgpCard
+      key="hoge"
+      title="Go1.21:slicesパッケージのチートシート | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20230816a/eyecatch-20230814.png"
+      url="https://future-architect.github.io/articles/20230816a/"
+      />
+      <OgpCard
+      key="hoge"
+      title="tftarget:Terraformターゲットを選択的に実行するためのGo製CLIツール | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20230329a/tftarget-eyecatch.jpg"
+      url="https://future-architect.github.io/articles/20230329a/"
+      />
+     <OgpCard
+      key="hoge"
+      title="CircleCIでPullRequest作成時の負荷を軽減する | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20230307a/theme.png"
+      url="https://future-architect.github.io/articles/20230307a/"
+      />
+     <OgpCard
+      key="hoge"
+      title="Go 1.20 timeパッケージのアップデート | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20230127a/top.png"
+      url="https://future-architect.github.io/articles/20230127a/"
+      />
+     <OgpCard
+      key="hoge"
+      title="GoでADコンバータ読み出し～観葉植物監視bot構築～ | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20220905a/eyecatch.png"
+      url="https://future-architect.github.io/articles/20220905a/"
+      />
+      <OgpCard
+      key="hoge"
+      title="Go1.19で追加されたAppend系メソッド | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20220803a/eyecatch.png"
+      url="https://future-architect.github.io/articles/20220803a/"
+      />
+     <OgpCard
+      key="hoge"
+      title="TinkerBoard 2S:AWS Greengrass v1をインストールする | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20220407a/tinker.png"
+      url="https://future-architect.github.io/articles/20220407a/"
+      />
+      <OgpCard
+      key="hoge"
+      title="Go1.18集中連載:新たに追加されたnet/netipとは | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20220215a/netip.png"
+      url="https://future-architect.github.io/articles/20220215a/"
+      />
+     <OgpCard
+      key="hoge"
+      title="Step Functionsの動的並列処理をローカルで実行する | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20220204a/eyecatch_stepfunctions.png"
+      url="https://future-architect.github.io/articles/20220204a/"
+      />
+     <OgpCard
+      key="hoge"
+      title="Pipenv+LocalStackで作るLambda開発環境 | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20220202a/eyecatch.png"
+      url="https://future-architect.github.io/articles/20220202a/"
+      />
+     <OgpCard
+      key="hoge"
+      title="DatoCMSでポートフォリオをサクッとつくる | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20220119a/color_full_logo.png"
+      url="https://future-architect.github.io/articles/20220119a/"
+      />
+     <OgpCard
+      key="hoge"
+      title="Qiita Advent Calendar 2021 に参加します | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20211129a/pexels-torsten-dettlaff-195030.jpg"
+      url="https://future-architect.github.io/articles/20211129a/"
+      />
+      <OgpCard
+      key="hoge"
+      title="IBM Quantum Challenge Fall 2021参加レポート | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20211115b/ibm-quantum-challenge-fall-2021-advanced.png"
+      url="https://future-architect.github.io/articles/20211115b/"
+      />
+
+    <OgpCard
+      key="hoge"
+      title="PythonでMQTT!! ～Alexaでコマンドを送信する～ | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20211001a/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg"
+      url="https://future-architect.github.io/articles/20211001a/"
+      />
+    <OgpCard
+      key="hoge"
+      title="GoでMQTT!!:～温湿度マイスターbotの作成～(後編) | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20210930a/サムネイル2.png"
+      url="https://future-architect.github.io/articles/20210930a/"
+      />
+    <OgpCard
+      key="hoge"
+      title="GoでMQTT!!:～温湿度マイスターbotの作成～(前編) | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20210929a/サムネイル1.png"
+      url="https://future-architect.github.io/articles/20210929a/"
+      />
+    <OgpCard
+      key="hoge"
+      title="Sesame3にICカード施錠/解錠機能を実装してみた with Go & Python | フューチャー技術ブログ"
+      image="https://future-architect.github.io/images/20210824a/サムネ.png"
+      url="https://future-architect.github.io/articles/20210824a/"
+      />
+      
       {articles.map((article, index) => (
         <OgpCard
           key={index}
