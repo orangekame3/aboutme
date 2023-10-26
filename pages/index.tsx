@@ -197,7 +197,7 @@ function IconSet(){
     <ActionIcon size="xl" component="a" href ="https://github.com/orangekame3" color="gray" variant="subtle">
       <IconBrandGithub style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
     </ActionIcon>
-		<ActionIcon size="xl" component="a" href ="https://www.linkedin.com/in/takafumi-miyanaga-4476131a6/" color="gray" variant="subtle">
+		<ActionIcon size="xl" component="a" href ="https://www.linkedin.com/in/takafumi-miyanaga-4476131a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" color="gray" variant="subtle">
       <IconBrandLinkedin style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
     </ActionIcon>
     <ActionIcon size="xl" component="a" href ="https://elk.zone/mstdn.jp/@orangekame3" color="gray" variant="subtle">
