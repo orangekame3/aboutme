@@ -252,7 +252,7 @@ function Publication(){
 	}
 	const osslist = [
 		{ title: "tftarget", description: "🎯tftarget is a CLI tool for Terraform ( plan | apply | destroy ) with target option. You can interactivity select resource to ( plan | apply | destroy ) with target option.",link:"https://github.com/future-architect/tftarget",star:175},
-		{ title: "paclear", description: "👾paclear is a clear command with PAC-MAN animation👾",link:"https://github.com/orangekame3/paclear",star:172},
+		{ title: "paclear", description: "👾paclear is a clear command with PAC-MAN animation👾",link:"https://github.com/orangekame3/paclear",star:174},
 		{ title: "stree", description: "📁Directory trees of AWS S3 Bucket",link:"https://github.com/orangekame3/stree",star:44},
 		{ title: "ghfetch", description: "ghfetch is a CLI tool to fetch GitHub user information and show like neofetch.",link:"https://github.com/orangekame3/ghfetch",star:20},
 	];
