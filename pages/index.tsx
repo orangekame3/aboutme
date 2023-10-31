@@ -252,7 +252,7 @@ function Publication(){
 	}
 	const osslist = [
 		{ title: "tftarget", description: "🎯tftarget is a CLI tool for Terraform ( plan | apply | destroy ) with target option. You can interactivity select resource to ( plan | apply | destroy ) with target option.",link:"https://github.com/future-architect/tftarget",star:175},
-		{ title: "paclear", description: "👾paclear is a clear command with PAC-MAN animation👾",link:"https://github.com/orangekame3/paclear",star:179},
+		{ title: "paclear", description: "👾paclear is a clear command with PAC-MAN animation👾",link:"https://github.com/orangekame3/paclear",star:181},
 		{ title: "stree", description: "📁Directory trees of AWS S3 Bucket",link:"https://github.com/orangekame3/stree",star:44},
 		{ title: "ghfetch", description: "ghfetch is a CLI tool to fetch GitHub user information and show like neofetch.",link:"https://github.com/orangekame3/ghfetch",star:21},
 	];
@@ -288,12 +288,20 @@ function Career() {
     <Title td="underline" my="xl" order={2}>Career</Title>
     <Center my="sm">
     <Timeline active={0}>
+    <Timeline.Item title="Osaka Univ. QIQB">
+				<Text c="dimmed" size="sm">
+          Software Developer and Researcher
+        </Text>
+        <Text c="dimmed" size="sm">
+          2023.11.01~now
+        </Text>
+      </Timeline.Item>
         <Timeline.Item title="Future Corp.">
 				<Text c="dimmed" size="sm">
           Backend engineer and IT consultant
         </Text>
         <Text c="dimmed" size="sm">
-          2021.04.01~now
+          2021.04.01~2023.10.31
         </Text>
       </Timeline.Item>
       <Timeline.Item title="Tokyo University of Science">
