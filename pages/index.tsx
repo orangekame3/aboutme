@@ -173,7 +173,7 @@ function PersonalInfo(){
         Takafumi Miyanaga
       </Text>
       <Text ta="center" fz="sm" c="dimmed">
-        Backend engineer
+        Software Developer and Researcher
       </Text>
 			<Group gap={0} className={classes.links} justify="center" wrap="nowrap">
       <IconSet/>
@@ -215,7 +215,7 @@ function Sentence(){
 	return(
 		<Center>
 		<Box my="xl" mx="xl" w="800">
-      <Text>I am a backend engineer and an IT consultant. </Text>
+      <Text>I am a software developer and an researcher. </Text>
 			<Text>I have a keen interest in the societal implementation of quantum computing and am actively working on designing architectures that integrate it with cloud solutions.</Text>
 			<Text>My preferred programming language is Go.</Text>
 		</Box>
